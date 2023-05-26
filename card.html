@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Card</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styleCard.css">
+</head>
+<body>
+    <div class="msg">
+        <p>Enjoy your <span id="raritySpan">{{rarity}}</span> card!</p>
+        <button type="button" id="download">Download card</button>
+        <button type="button" id="new" onclick="window.history.go(-1); return false;">Generate a new card</button>
+    </div>
+    <div class="card_outline">
+        <div class="card_body">
+            <p class="card_name">{{Name}}</p>
+            <div class="imgContainer">
+                <img class="card_image" src="{{image}}" alt="image" crossorigin="anonymous">    
+            </div>
+            <div class="descriptionContainer">
+                <p class="card_description">{{description}}</p>
+            </div>
+            <div class="card_attack_box">
+                <p class="card_attack_value">{{attack}}</p>
+                <img class="card_attack_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVYSURBVHgB7Zh/TFtVFMfPea/tIlsIm3HqDGRq4h/+yNQYjRoTwMaZGGcMMWYxy+JcFDcXBqwtbEBfYdDyo7AwDG6REAWX7B9//DdmMvyxGJXM6P4wRvxPM+MfCjIjo333Hs9tYbSlfa+FFjTyTYDe+84rn37vOefeV4B1rSsmKjdKIg+37kicQ/iXiB6tvSF64813acK8FwQ8pgksJQn3gaAyHmsa6lvwYuOUinXAGol2h+6RUlahpIdI4IPShNt0KWDBR0q2848FYKU1gaaXgtVEdJK5HET2i01Ik4ljDVZZtKfDSxoMQi6GEawdNO0LHSQNOyFHIeJE4njVoGk/AwMNwDIkgS4njlcFmqpDXk7dZQErRR3mT4njgkPT6+wwQc4pkfAO14o+CfySOFNQaDrIwCtwWIl7y1epcwWDpsOq6FYGrCQRr6TOFQSa6rq46KyBUV0n+B3sJOWF1Km8Q5OHi86mSxCgH880HkKES9Zx9FsEtbHU+bxCk0+1Nes+rID1kYZWsbsjyKvxlEXglA7ymaLPmn5OvZQ3aDqqig6tHUYGfoeB93QEecNoyBiINCMI3DjeknYl8gJNzaoP2wBrml8famjlbbwNwQoYpgRKt+vCsW8yhaz4wEQtsaLrVOuZMQbAo5/y9oh9nBKCgWXG0BkhxU7XuZYJi3+5MqepNeS1a2tE7PCphh6xPxS0dTgKFXbASllB8zESqa+7kvqC26/Phdhh1KyLDtnhQW8rvcrACJmBuegkUZVrLHNKJMr2MKuAYSA8DJL28rL+BSQrYGb2e3Jt/IKfKnaAOrer5ebKib2e/yGTPHo/O3yAgQU0JMXIhThuakKlBFW43s8OWMne6cHwECPsjX8C2ARCOx9xbdqOaFbwxHfpbmE0Iwb8hkoJC4cBo0J35ARsC02ne/r5z8sp05udurwYRSzDjc5KHicdG/lwZOi9vgDV2KQE57AJ8LjrrDcnYFtotqw6w5XNDqmdh0ikFDeIcl7uy/FwBu5h4NquIFkBc5dA1N2us422RZc7tJRNFle3kqmNR+boVhRmJRfSi3qIgT0KmCwdRskbx2juDi++hY1oMOwHUxqLxcNzMqHoJC+zyb21rXFC+EJ1KDEcn08uzPlCnME5Bn5veQ5nDR0DP9mtoP1poeNAV0wRed45C7+Sw/kRmPDAEmhuaxjV3Di8fIcXlFWfxkMeg0MNi5BtDnCOgdNRjFGnm62YTL5M07yxVOUDWCm7zaU3eAfW1Af4AGFYhJXwk/Y4bJi7E/+Wj3AbiXcVPvyg5nTjad845Em20DTQ+xw7OEn9PW1YXx+QVo4T3ETcx6EYt2EEypn4UxO1J3HwyCXIoyxzmt7qfpafdz7kAtJihUR4HA8faRad3X4UZKQU2WKhCpgW0qxwnTj2LRRAGZ2mtxkYcTQpRlIThbv9us8T4O09kOledqLEAfrHkQPt90MBlNZpGurcBVL/gB3UFs4IiS2PZaDHExBt846nOXvEuwdOo+66HU/UTkMetcRpGgnvAmRgtFgFSQYF2fFmdhzRgIyiEjBnb4E8KwmM3u2r5GIagWwKlBi8tesJ3c/gMn2q8M4YwIGjP0CedR2ODEMDlMMMXZzNjQzUhC3ez9Vr/bjP4OIzkq5rGND7Gw0ogBYdvbtoK6dEWTY38RN1k97oa0+ci507QAa4L/9IKOv4pGdAgZRUiDQaPsdFtHNJ4SWOSWvhft0Ga6jk3J0zX+DfX2aMxrUHVkqCxld8V+Fa9Gn2/+s0sU1Yu/bASku6BL7W8CdI4eY8OBOfgKvqyy6s8bTDf0H0ZriUenu3wLr+p/oHThWKFkTFkKoAAAAASUVORK5CYII=" alt="sword" crossorigin="anonymous">
+            </div>
+            <div class="card_health_box">
+                <img class="card_health_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANaSURBVHgBrVYxkhQxDJTkrYKE4iWXQnoPuC/wCIoqUiJ+wCcIeMNlfIlLxkLqljyTna9qvbU7uzNet1tqtayyMZ5evj2L+6OouMZv9XiJTlOb6jI1riZ6mJj/fv/z486aJltjimpAJWjAxmeA6RU0346Jm+MmbxzJNDbgRvC4CgAjBAG+D7zJOKc5wpswyTZv4LeSbQbd4lM2xx7jAIt8elwdeQ1mGvnMsFvmG2G3Zr9NZRO68pkgYgx1vB2bSPAMs96X8a0FlRuIV4KoQ+FknOLCfd1mvCkuLC6Ga4IGgNpRGUe+BXnX+4Y6cxjMqGYdyC1ikDnuPAvLSjaHPv37+owC9QYRFEvcm0MoqAB4CPAPA4yDKWoXzPE2KBuKzu9/kf98YgNCHLVBheFg0zNCrY8MlQPWwcRLPEKjoJAOhjw2Mh2LVF4ny0ommLt+kgQwGoyl6OJuTDwsDYdrul0DCtawxVzAKCiKh6WjZMgQM6/rGcvq6GfG+diK9ebP+ZPicgQb0Fr50jIGORk7nhrBBQvaWqjnVLnNpX6azRxMJSsgnt+SYQOXK1G5EArDjT9wI4hANgMs2vXNK7OHubyfxWYVQTqcIVVZ+zdl4tB1yuy7AeBPYLYYMYS0T7KVZlr5r8VPU2nmACeh3ODNmVfUqKA+e+f8vfKT/FPlliJhXqW6EvNnx7LPFXKUH640mVK2ohKaRScfZVHdR45mVMo9ILlizgWlQJxiQojd6Wy5lp/CpMOh/sF4hakf1oLw5IkGwXKRPgDAsyr8NsvZXMpYWmDNVDnfUa3xv5EtxVZokDNpswf71K4VG6GSc3Gf2mK7+nUs7bmpwxmtaio4pfgo8xgVnZtV8UOFfahp5gawUncq2VGjFF/n07qUGImVhpwDo0H4vRwrFzFDNF4fX15+/AmAz6OON12LV8CRVhqgv959f9hZc6s79SEgQcmmlLncqjTheu8zl64QS9f0WTp1AOzne2OvLc52pq6AS30LD3ml4u2xBbzE0m7lXkdZv9zHyey+oVaTpd5U+aAtii1zgVW2r2+NLcao2/JhlowDxNlI2DbLD2RzbDEew2Ypdp6NYPVpeoCju97/XM2ScfZkrZPE6layOpJsjr0ct0ezhC6Nv85Z50Fgm/F/lCd4Gc9cuS0AAAAASUVORK5CYII=" alt="health" crossorigin="anonymous">
+                <p class="card_health_value">{{health}}</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/card.js"></script>
+    <script src="./js/html2canvas.js"></script>
+    <script src="./js/downloadCard.js"></script>
+</body>
+</html>

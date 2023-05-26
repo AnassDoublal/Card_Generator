@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Creation</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+</head>
+<body>
+    <div id="leftSection">
+        <p id="title">Create your own combat card</p>
+        <img src="./imgs/snake.png" alt="Sneaky Snake">
+    </div>
+    <form action="card.html" method="GET">
+        <label for="name">Name : </label><input type="text" name="name" placeholder="Sneaky Snake" maxlength="20" required>
+        <label for="img">Image : </label><input type="file" name="img"  accept="image/png, image/jpeg" onchange="readImage()" required>
+        <!-- <input type="hidden" name="imgPath" required> -->
+        <label for="strength">Strength : </label><input type="number" name="strength" min="0" max="200" placeholder="0" required>
+        <label for="health">Health : </label><input type="number" name="health" min="0" max="200" placeholder="0" required>
+        <label for="description">Description : </label><textarea name="description" placeholder="A mighty creature..." rows="4" maxlength="240" required></textarea>
+        <!-- <label for="description">Description : </label><input type="text" name="description" placeholder="A mighty creature..."> -->
+        <p id="rarityTitle">Select rarity : </p>
+        <div id="rarity">
+                <input type="radio" id="common" name="rarityType" value="common" required><label for="common"> Common</label><br>
+                <input type="radio" id="uncommon" name="rarityType" value="uncommon"><label for="uncommon"> Uncommon</label><br>
+                <input type="radio" id="rare" name="rarityType" value="rare"><label for="rare"> Rare</label><br>
+                <input type="radio" id="epic" name="rarityType" value="epic"><label for="epic"> Epic</label><br>
+                <input type="radio" id="legendary" name="rarityType" value="legendary"><label for="legendary"> Legendary</label><br>
+        </div>
+        <input type="submit" value="Generate">
+    </form>
+    <script src="./js/script.js"></script>
+</body>
+</html>

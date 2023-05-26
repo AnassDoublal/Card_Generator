@@ -1,0 +1,158 @@
+body{
+    background: #000814;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.msg{
+    margin-right: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 20em;
+}
+
+.msg > p{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 1em;
+}
+
+.msg > p > span{
+    font-weight: bold;
+}
+
+.msg > button{
+    width: 15em;
+    height: 3em;
+    margin-top: 1em;
+    background: #003566;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: .3s;
+}
+
+.msg > button:hover{
+    background: #fff;
+    color: #003566;
+    border: 1px solid #003566;
+    transition: .3s;
+}
+
+.card_outline{
+    width: 22em;
+    height: 30em;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_body{
+    --cardWidth: 21em;
+    --cardHeight: 29em;
+    width: 21em;
+    height: 29em;
+    /* background: #F3AF19; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card_name{
+    margin-top: .8em;
+}
+
+.imgContainer, .descriptionContainer{
+    margin-top: 1.2em;
+}
+
+.card_name, .card_description, .card_attack_value, .card_health_value{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card_name{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.imgContainer{
+    width: 100%;
+    height: 10em;
+    overflow: hidden;
+}
+
+.card_image{
+    max-width: calc(var(--cardWidth));
+    /* max-height: auto; */
+}
+
+.descriptionContainer{
+    width: 90%;
+    word-break: break-word;
+}
+
+.card_description{
+    font-size: 14px;
+}
+
+.card_attack_box, .card_health_box{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background: #FFF2B4;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.card_attack_box{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: -20%;
+    margin-bottom: -20%;
+}
+
+.card_health_box{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: -20%;
+    margin-bottom: -20%;
+}
+
+.card_attack_value, .card_health_value{
+    margin-top: 1.2em;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.card_attack_value{
+    margin-left: 2em;
+}
+
+.card_health_value{
+    margin-right: 2em;
+}
+
+.card_attack_image{
+    width: 2em;
+    height: 2em;
+    margin-top: 3.5em;
+}
+
+.card_health_image{
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 4em;
+}
